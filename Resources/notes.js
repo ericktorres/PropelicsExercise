@@ -11,6 +11,7 @@ function showNotes(tableData){
 	
 	var tableView = Ti.UI.createTableView({
 		top:'120dp',
+		bottom:'30dp',
 		width:'90%',
 		height:Titanium.UI.SIZE,
 		separatorColor:'#FF8000',

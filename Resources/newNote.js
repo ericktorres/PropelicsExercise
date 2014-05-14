@@ -3,6 +3,8 @@
  * ericktorres87@gmail.com
  */
 
+Ti.include('database/database.js');
+
 var newNote = function(){
 
 	var mainBackground = Ti.UI.createView({
@@ -48,6 +50,25 @@ var newNote = function(){
 		height:'50dp',
 		top:'30dp',
 		bottom:'30dp'
+	});
+	
+	saveButton.addEventListener('click', function(e){
+		var title = txtTitle.value;
+		var content = txtContent.value;
+		var result = Ti.UI.createAlertDialog({
+			title:'AVISO'
+		});
+		
+		if(addNote(title, content)){
+			result.message = 'La nota ha sido guardada con éxito.';
+			result.show();
+			txtTitle.value = "";
+			txtContent.value = "";
+		}else{
+			result.message = 'Ha ocurrido un error.';
+			result.show();
+		}
+		
 	});
 	
 	mainBackground.add(titleLabel);
