@@ -6,7 +6,8 @@
 var win = Ti.UI.createWindow({
 	navBarHidden:true,
 	exitOnClose:true,
-	url:'mainWindow.js'
+	backgroundColor:'#FFFFFF',
+	url:'mainWindow.js'	
 });
 
 win.open();
