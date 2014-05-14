@@ -8,6 +8,10 @@ Ti.include('notes.js');
 
 var win = Ti.UI.currentWindow;
 
+var Menu = require('menu');
+var menu = new Menu();
+win.add(menu);
+
 var header = Ti.UI.createLabel({
 		text:'NOTES / CREATION DATE',
 		backgroundColor:'#2E2E2E',
