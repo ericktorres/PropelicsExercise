@@ -13,14 +13,14 @@ var menu = new Menu();
 win.add(menu);
 
 var header = Ti.UI.createLabel({
-		text:'NOTES / CREATION DATE',
-		backgroundColor:'#2E2E2E',
-		color:'#FFFFFF',
-		font:{ fontSize:'16dp', fontWeight:'bold'},
-		height:'40dp',
-		width:'90%',
-		top:'80dp',
-		textAlign:'center'
+	text:'NOTES / CREATION DATE',
+	backgroundColor:'#2E2E2E',
+	color:'#FFFFFF',
+	font:{ fontSize:'16dp', fontWeight:'bold'},
+	height:'40dp',
+	width:'90%',
+	top:'80dp',
+	textAlign:'center'
 });
 	
 var arrNotes = getNotes();
