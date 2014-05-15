@@ -5,6 +5,31 @@
 
 Ti.include('vendors/date.format.js');
 
+function editForm(id, currentTitle, currentNote){
+	var win = Ti.UI.createWindow({
+		navBarHidden:true,
+		backgroundColor:'transparent',
+		opacity:1.0
+	});
+	
+	var mainView = Ti.UI.createView({
+		width:'100%',
+		height:'100%',
+		backgroundImage:'images/backCloseMenu.png',
+		backgroundRepeat:true
+	});
+	mainView.addEventListener('click', function(e){
+		win.close();
+	});
+	
+	var editNote = require('editNote');
+	var note = new editNote(id, currentTitle, currentNote);
+	
+	mainView.add(note);	
+	win.add(mainView);
+	win.open();
+}
+
 function showNotes(tableData){	
 	
 	var total = tableData.length;
@@ -47,6 +72,10 @@ function showNotes(tableData){
 	}
 	
 	tableView.data = data;
+	tableView.addEventListener('click', function(e){
+		editForm(tableData[e.index].id, tableData[e.index].titulo, tableData[e.index].contenido);
+		//editNote(tableData[e.index].id, tableData[e.index].titulo, tableData[e.index].contenido);
+	});
 	
 	return tableView;
 }

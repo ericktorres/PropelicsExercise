@@ -25,7 +25,7 @@ function clearWindow(){
 	}
 }
 
-function changeWindow(index){
+function changeWindow(index, id, currentTitle, currentNote){
 	var win = Ti.UI.currentWindow;
 	
 	clearWindow();
@@ -54,6 +54,7 @@ function changeWindow(index){
 		win.add(header);
 		win.add(notes);
 	}
+
 }
 
 var menu = function(){
